@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Box, 
   Container, 
@@ -21,84 +21,87 @@ import { useLanguage, translations } from '../contexts/LanguageContext';
 import CloseIcon from '@mui/icons-material/Close';
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
 
+const BASE_URL = 'https://songsong0000.github.io/tea-room-designer';
+
 const teaRoomTypes = [
   {
     key: 'privateTeaSpace',
     keyDesc: 'privateTeaSpaceDesc',
-    image: '/images/幽居式品茶空间.png'
+    image: `${BASE_URL}/images/幽居式品茶空间.png`
   },
   {
     key: 'zenTeaSpace',
     keyDesc: 'zenTeaSpaceDesc',
-    image: "/images/禅修式品茶空间.png"
+    image: `${BASE_URL}/images/禅修式品茶空间.png`
   },
   {
     key: 'elegantTeaSpace',
     keyDesc: 'elegantTeaSpaceDesc',
-    image: '/images/雅集式品茶空间.jpg'
+    image: `${BASE_URL}/images/雅集式品茶空间.jpg`
   },
   {
     key: 'casualTeaSpace',
     keyDesc: 'casualTeaSpaceDesc',
-    image: '/images/闲游式品茶空间.jpg'
+    image: `${BASE_URL}/images/闲游式品茶空间.jpg`
   }
 ];
 
 // 筛选以1开头的图片并处理图片名称
 const privateTeaImages = [
-  '/images/1《品茶图轴》 明 文征明.jpg',
-  '/images/1《煮茶图》 元 王蒙.webp',
-  '/images/1《煮茶图》 明 唐寅.jpg',
-  '/images/1《高山流水》 明 仇英.jpg',
-  '/images/1《无题》.jpg',
-  '/images/1《无题》.jpeg',
-  '/images/1《无题》.webp',
-  '/images/1《无题》 (2).jpg',
-  '/images/1 《陆羽烹茶图》元 赵原.jpeg'
+  `${BASE_URL}/images/1《品茶图轴》 明 文征明.jpg`,
+  `${BASE_URL}/images/1《煮茶图》 元 王蒙.webp`,
+  `${BASE_URL}/images/1《煮茶图》 明 唐寅.jpg`,
+  `${BASE_URL}/images/1《高山流水》 明 仇英.jpg`,
+  `${BASE_URL}/images/1《无题》.jpg`,
+  `${BASE_URL}/images/1《无题》.jpeg`,
+  `${BASE_URL}/images/1《无题》.webp`,
+  `${BASE_URL}/images/1《无题》 (2).jpg`,
+  `${BASE_URL}/images/1 《陆羽烹茶图》元 赵原.jpeg`
 ];
 
 // 禅修茶室图片集合 - 筛选所有以2开头的图片
 const zenTeaImages = [
-  '/images/2 《天目山居》近代 丰子恺.png',
-  '/images/2《烹茶洗砚图》清 钱慧安.png',
-  '/images/2《萧翼赚兰亭图》唐 阎立 .jpg',
-  '/images/2 《竹炉山房图》 元 沈贞.jpeg'
+  `${BASE_URL}/images/2 《天目山居》近代 丰子恺.png`,
+  `${BASE_URL}/images/2《烹茶洗砚图》清 钱慧安.png`,
+  `${BASE_URL}/images/2《萧翼赚兰亭图》唐 阎立 .jpg`,
+  `${BASE_URL}/images/2 《竹炉山房图》 元 沈贞.jpeg`
 ];
 
 // 雅集茶室图片集合 - 筛选所有以3开头的图片
 const elegantTeaImages = [
-  '/images/3《无题》.webp',
-  '/images/3《无题》.jpg',
-  '/images/3《无题》.jpeg',
-  '/images/3《无题》 (2).jpg',
-  '/images/3《无题》 (3).jpg',
-  '/images/3《西园雅集图》 明 仇英.jpeg',
-  '/images/3《会昌九老图》 明 李公麟.jpg',
-  '/images/3《品茶图》明 陈洪绶.jpg',
-  '/images/3《十八学士图》 宋 赵喆.jpg',
-  '/images/3《惠山茶会图》 明 文征明.jpg',
-  '/images/3《文會圖》 宋 赵喆.jpg',
-  '/images/3《撵茶图》 南宋 刘松年.jpeg'
+  `${BASE_URL}/images/3《无题》.webp`,
+  `${BASE_URL}/images/3《无题》.jpg`,
+  `${BASE_URL}/images/3《无题》.jpeg`,
+  `${BASE_URL}/images/3《无题》 (2).jpg`,
+  `${BASE_URL}/images/3《无题》 (3).jpg`,
+  `${BASE_URL}/images/3《西园雅集图》 明 仇英.jpeg`,
+  `${BASE_URL}/images/3《会昌九老图》 明 李公麟.jpg`,
+  `${BASE_URL}/images/3《品茶图》明 陈洪绶.jpg`,
+  `${BASE_URL}/images/3《十八学士图》 宋 赵喆.jpg`,
+  `${BASE_URL}/images/3《惠山茶会图》 明 文征明.jpg`,
+  `${BASE_URL}/images/3《文會圖》 宋 赵喆.jpg`,
+  `${BASE_URL}/images/3《撵茶图》 南宋 刘松年.jpeg`
 ];
 
 // 闲游茶室图片集合 - 更新修改后的文件名
 const casualTeaImages = [
-  '/images/4《卢仝烹茶图》宋 钱选 .jpg',
-  '/images/4《梁苑之游》 明.webp',
-  '/images/4《兰亭雅集图》 明 仇英.jpg',
-  '/images/4《竹炉图》 明 祝枝山.jpg',
-  '/images/4《无题》.jpeg',  // 更新原4-7.jpeg的链接
-  '/images/4《无题》.jpg',   // 更新原4-6.jpg的链接
-  '/images/4 《煮茶图》 明 丁云鹏.jpg',
-  '/images/4《斗茶图》 明 唐寅.jpg',
-  '/images/4 《玉川先生煎茶图》 清 沈农.jpeg',
-  '/images/4 《侍茗图》明 唐寅.jpg',
-  '/images/4 《侍茗图》 明 唐寅.jpeg'
+  `${BASE_URL}/images/4《卢仝烹茶图》宋 钱选 .jpg`,
+  `${BASE_URL}/images/4《梁苑之游》 明.webp`,
+  `${BASE_URL}/images/4《兰亭雅集图》 明 仇英.jpg`,
+  `${BASE_URL}/images/4《竹炉图》 明 祝枝山.jpg`,
+  `${BASE_URL}/images/4《无题》.jpeg`,  // 更新原4-7.jpeg的链接
+  `${BASE_URL}/images/4《无题》.jpg`,   // 更新原4-6.jpg的链接
+  `${BASE_URL}/images/4 《煮茶图》 明 丁云鹏.jpg`,
+  `${BASE_URL}/images/4《斗茶图》 明 唐寅.jpg`,
+  `${BASE_URL}/images/4 《玉川先生煎茶图》 清 沈农.jpeg`,
+  `${BASE_URL}/images/4 《侍茗图》明 唐寅.jpg`,
+  `${BASE_URL}/images/4 《侍茗图》 明 唐寅.jpeg`
 ];
 
 // 统一的图片标题处理函数 - 适用于所有茶室类型
 const getImageTitle = (path) => {
-  // 提取文件名
+  if (!path) return '';
+  // 从完整路径中提取文件名
   const fileName = path.split('/').pop();
   
   // 针对《无题》的特殊处理 - 去掉前面的数字
@@ -192,7 +195,7 @@ const TeaRoomDetailDialog = ({ open, teaRoomKey, onClose, language }) => {
             alignItems: 'center'
           }}>
             <img 
-              src="/images/teapot-silhouette.png" 
+              src={`${BASE_URL}/images/teapot-silhouette.png`}
               alt="茶壶图标" 
               style={{ width: 24, height: 24, marginRight: 8, opacity: 0.7 }} 
             />
@@ -403,11 +406,46 @@ const TeaRoomDetailDialog = ({ open, teaRoomKey, onClose, language }) => {
   );
 };
 
+const ImageWithFallback = ({ src, alt, ...props }) => {
+  const handleError = (e) => {
+    console.error(`图片加载失败: ${src}`);
+    e.target.src = '/tea-room-designer/images/teapot-silhouette.png'; // 使用默认图片
+  };
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      onError={handleError}
+      {...props}
+    />
+  );
+};
+
 function HomePage() {
   const navigate = useNavigate();
   const theme = useTheme();
   const { t, language } = useLanguage();
   const [openDialog, setOpenDialog] = useState(null);
+
+  useEffect(() => {
+    const preloadImages = () => {
+      const allImages = [
+        ...teaRoomTypes.map(type => type.image),
+        ...privateTeaImages,
+        ...zenTeaImages,
+        ...elegantTeaImages,
+        ...casualTeaImages
+      ];
+      
+      allImages.forEach(src => {
+        const img = new Image();
+        img.src = src;
+      });
+    };
+    
+    preloadImages();
+  }, []);
 
   return (
     <Box 
@@ -565,7 +603,7 @@ function HomePage() {
                 <CardMedia
                   component="img"
                   height="200"
-                  image={`${process.env.PUBLIC_URL}${type.image}`}
+                  image={type.image}
                   alt={t[type.key]}
                 />
                 <CardContent>
