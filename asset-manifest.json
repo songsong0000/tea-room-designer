@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "https://songsong0000.github.io/tea-room-designer/static/js/main.d74e1a1c.js",
-    "index.html": "https://songsong0000.github.io/tea-room-designer/index.html",
-    "main.d74e1a1c.js.map": "https://songsong0000.github.io/tea-room-designer/static/js/main.d74e1a1c.js.map"
+    "main.js": "/tea-room-designer/static/js/main.5cddb16b.js",
+    "index.html": "/tea-room-designer/index.html",
+    "main.5cddb16b.js.map": "/tea-room-designer/static/js/main.5cddb16b.js.map"
   },
   "entrypoints": [
-    "static/js/main.d74e1a1c.js"
+    "static/js/main.5cddb16b.js"
   ]
 }
