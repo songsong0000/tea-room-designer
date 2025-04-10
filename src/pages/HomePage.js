@@ -565,7 +565,7 @@ function HomePage() {
                 <CardMedia
                   component="img"
                   height="200"
-                  image={type.image}
+                  image={`${process.env.PUBLIC_URL}${type.image}`}
                   alt={t[type.key]}
                 />
                 <CardContent>
