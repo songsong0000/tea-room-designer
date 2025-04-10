@@ -27,22 +27,22 @@ const teaRoomTypes = [
   {
     key: 'privateTeaSpace',
     keyDesc: 'privateTeaSpaceDesc',
-    image: `${BASE_URL}/images/幽居式品茶空间.png`
+    image: `${BASE_URL}/images/幽居式品茶空间.jpeg`
   },
   {
     key: 'zenTeaSpace',
     keyDesc: 'zenTeaSpaceDesc',
-    image: `${BASE_URL}/images/禅修式品茶空间.png`
+    image: `${BASE_URL}/images/禅修式品茶空间.jpeg`
   },
   {
     key: 'elegantTeaSpace',
     keyDesc: 'elegantTeaSpaceDesc',
-    image: `${BASE_URL}/images/雅集式品茶空间.jpg`
+    image: `${BASE_URL}/images/雅集式品茶空间.jpeg`
   },
   {
     key: 'casualTeaSpace',
     keyDesc: 'casualTeaSpaceDesc',
-    image: `${BASE_URL}/images/闲游式品茶空间.jpg`
+    image: `${BASE_URL}/images/闲游式品茶空间.jpeg`
   }
 ];
 
