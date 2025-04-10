@@ -1,0 +1,5 @@
+9280627 更新设计页面和主页，添加路径工具
+c5599f2 修复图片路径问题，使用绝对URL
+37a6078 Update project with fixed dependencies and images
+c555cab Add images using Git LFS
+5c8a525 Initial commit

@@ -20,7 +20,8 @@ import { useNavigate } from 'react-router-dom';
 import { useLanguage, translations } from '../contexts/LanguageContext';
 import CloseIcon from '@mui/icons-material/Close';
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
-import { BASE_URL, getImagePath } from '../utils/pathUtils';
+
+const BASE_URL = '/tea-room-designer';
 
 const teaRoomTypes = [
   {
@@ -322,7 +323,7 @@ const TeaRoomDetailDialog = ({ open, teaRoomKey, onClose, language }) => {
                       onError={(e) => {
                         console.error(`图片加载失败: ${img}`);
                         e.target.onerror = null; // 防止无限循环
-                        e.target.src = getImagePath('teapot-silhouette.png'); // 使用占位图
+                        e.target.src = '/images/image-placeholder.png'; // 使用占位图
                       }}
                     />
                     <Box 
@@ -408,7 +409,7 @@ const TeaRoomDetailDialog = ({ open, teaRoomKey, onClose, language }) => {
 const ImageWithFallback = ({ src, alt, ...props }) => {
   const handleError = (e) => {
     console.error(`图片加载失败: ${src}`);
-    e.target.src = getImagePath('teapot-silhouette.png'); // 使用默认图片
+    e.target.src = '/tea-room-designer/images/teapot-silhouette.png'; // 使用默认图片
   };
 
   return (
@@ -459,7 +460,7 @@ function HomePage() {
           left: 0,
           width: '100%',
           height: '100%',
-          background: `url("${getImagePath('renjianBg.jpg')}")`,
+          background: `url("/images/renjianBg.jpg")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           opacity: 0.15,
@@ -471,7 +472,7 @@ function HomePage() {
       <Box
         sx={{
           height: '70vh',
-          background: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("${getImagePath('饮茶.png')}")',
+          background: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("/images/饮茶.png")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           display: 'flex',
