@@ -21,7 +21,7 @@ import { useLanguage, translations } from '../contexts/LanguageContext';
 import CloseIcon from '@mui/icons-material/Close';
 import ZoomInIcon from '@mui/icons-material/ZoomIn';
 
-const BASE_URL = '/tea-room-designer';
+const BASE_URL = '/tea-room-designer/public';
 
 const teaRoomTypes = [
   {
