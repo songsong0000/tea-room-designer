@@ -1,13 +1,14 @@
 import React from 'react';
 import { Box } from '@mui/material';
+import { getImagePath } from '../utils/pathUtils';
 
 const TeaDecoration = ({ type = 'teapot', position = 'topRight', size = 100 }) => {
   const getImagePath = () => {
     switch(type) {
-      case 'teapot': return '/images/teapot-silhouette.png';
-      case 'cup': return '/images/teacup-silhouette.png';
-      case 'bowl': return '/images/teabowl-silhouette.png';
-      default: return '/images/teapot-silhouette.png';
+      case 'teapot': return getImagePath('teapot-silhouette.png');
+      case 'cup': return getImagePath('teacup-silhouette.png');
+      case 'bowl': return getImagePath('teabowl-silhouette.png');
+      default: return getImagePath('teapot-silhouette.png');
     }
   };
 

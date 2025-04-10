@@ -23,6 +23,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { generateTeaRoomImage } from '../services/apiService';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useTheme } from '@mui/material/styles';
+import { getImagePath } from '../utils/pathUtils';
 
 const designParameters = {
   基础设置: {
@@ -412,7 +413,7 @@ function DesignerPage() {
   };
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: 'background.default', background: 'url("/images/ink-background.png")', backgroundSize: 'cover' }}>
+    <Box sx={{ minHeight: '100vh', bgcolor: 'background.default', background: `url("${getImagePath('ink-background.png')}")`, backgroundSize: 'cover' }}>
       <Container maxWidth="lg" sx={{ py: 4 }}>
         <Typography variant="h4" component="h1" gutterBottom>
           {t.designTitle}

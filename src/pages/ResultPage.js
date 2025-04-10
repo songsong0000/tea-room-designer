@@ -15,6 +15,7 @@ import {
 } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
+import { getImagePath } from '../utils/pathUtils';
 
 function ResultPage() {
   const location = useLocation();
@@ -207,7 +208,7 @@ function ResultPage() {
   }
 
   return (
-    <Box sx={{ minHeight: '100vh', bgcolor: 'background.default', background: 'url("/images/76e4a88d66d4d9a7f1c21a465a581ac.png")', backgroundSize: 'cover' }}>
+    <Box sx={{ minHeight: '100vh', bgcolor: 'background.default', background: `url("${getImagePath('76e4a88d66d4d9a7f1c21a465a581ac.png')}")`, backgroundSize: 'cover' }}>
       <Container maxWidth="lg" sx={{ py: 4 }}>
         <Typography variant="h4" component="h1" gutterBottom>
           {language === 'zh' ? '设计方案' : 'Design Solution'}
