@@ -48,53 +48,53 @@ const teaRoomTypes = [
 
 // 筛选以1开头的图片并处理图片名称
 const privateTeaImages = [
-  `${BASE_URL}/images/1《品茶图轴》 明 文征明.jpg`,
+  `${BASE_URL}/images/1《品茶图轴》 明 文征明.jpeg`,
   `${BASE_URL}/images/1《煮茶图》 元 王蒙.webp`,
-  `${BASE_URL}/images/1《煮茶图》 明 唐寅.jpg`,
-  `${BASE_URL}/images/1《高山流水》 明 仇英.jpg`,
-  `${BASE_URL}/images/1《无题》.jpg`,
+  `${BASE_URL}/images/1《煮茶图》 明 唐寅.jpeg`,
+  `${BASE_URL}/images/1《高山流水》 明 仇英.jpeg`,
+  `${BASE_URL}/images/1《无题》.jpeg`,
   `${BASE_URL}/images/1《无题》.jpeg`,
   `${BASE_URL}/images/1《无题》.webp`,
-  `${BASE_URL}/images/1《无题》 (2).jpg`,
+  `${BASE_URL}/images/1《无题》 (2).jpeg`,
   `${BASE_URL}/images/1 《陆羽烹茶图》元 赵原.jpeg`
 ];
 
 // 禅修茶室图片集合 - 筛选所有以2开头的图片
 const zenTeaImages = [
-  `${BASE_URL}/images/2 《天目山居》近代 丰子恺.png`,
-  `${BASE_URL}/images/2《烹茶洗砚图》清 钱慧安.png`,
-  `${BASE_URL}/images/2《萧翼赚兰亭图》唐 阎立 .jpg`,
+  `${BASE_URL}/images/2 《天目山居》近代 丰子恺.jpeg`,
+  `${BASE_URL}/images/2《烹茶洗砚图》清 钱慧安.jpeg`,
+  `${BASE_URL}/images/2《萧翼赚兰亭图》唐 阎立 .jpeg`,
   `${BASE_URL}/images/2 《竹炉山房图》 元 沈贞.jpeg`
 ];
 
 // 雅集茶室图片集合 - 筛选所有以3开头的图片
 const elegantTeaImages = [
   `${BASE_URL}/images/3《无题》.webp`,
-  `${BASE_URL}/images/3《无题》.jpg`,
   `${BASE_URL}/images/3《无题》.jpeg`,
-  `${BASE_URL}/images/3《无题》 (2).jpg`,
-  `${BASE_URL}/images/3《无题》 (3).jpg`,
+  `${BASE_URL}/images/3《无题》.jpeg`,
+  `${BASE_URL}/images/3《无题》 (2).jpeg`,
+  `${BASE_URL}/images/3《无题》 (3).jpeg`,
   `${BASE_URL}/images/3《西园雅集图》 明 仇英.jpeg`,
-  `${BASE_URL}/images/3《会昌九老图》 明 李公麟.jpg`,
-  `${BASE_URL}/images/3《品茶图》明 陈洪绶.jpg`,
-  `${BASE_URL}/images/3《十八学士图》 宋 赵喆.jpg`,
-  `${BASE_URL}/images/3《惠山茶会图》 明 文征明.jpg`,
-  `${BASE_URL}/images/3《文會圖》 宋 赵喆.jpg`,
+  `${BASE_URL}/images/3《会昌九老图》 明 李公麟.jpeg`,
+  `${BASE_URL}/images/3《品茶图》明 陈洪绶.jpeg`,
+  `${BASE_URL}/images/3《十八学士图》 宋 赵喆.jpeg`,
+  `${BASE_URL}/images/3《惠山茶会图》 明 文征明.jpeg`,
+  `${BASE_URL}/images/3《文會圖》 宋 赵喆.jpeg`,
   `${BASE_URL}/images/3《撵茶图》 南宋 刘松年.jpeg`
 ];
 
 // 闲游茶室图片集合 - 更新修改后的文件名
 const casualTeaImages = [
-  `${BASE_URL}/images/4《卢仝烹茶图》宋 钱选 .jpg`,
+  `${BASE_URL}/images/4《卢仝烹茶图》宋 钱选 .jpeg`,
   `${BASE_URL}/images/4《梁苑之游》 明.webp`,
-  `${BASE_URL}/images/4《兰亭雅集图》 明 仇英.jpg`,
-  `${BASE_URL}/images/4《竹炉图》 明 祝枝山.jpg`,
+  `${BASE_URL}/images/4《兰亭雅集图》 明 仇英.jpeg`,
+  `${BASE_URL}/images/4《竹炉图》 明 祝枝山.jpeg`,
   `${BASE_URL}/images/4《无题》.jpeg`,  // 更新原4-7.jpeg的链接
-  `${BASE_URL}/images/4《无题》.jpg`,   // 更新原4-6.jpg的链接
-  `${BASE_URL}/images/4 《煮茶图》 明 丁云鹏.jpg`,
-  `${BASE_URL}/images/4《斗茶图》 明 唐寅.jpg`,
+  `${BASE_URL}/images/4《无题》.jpeg`,   // 更新原4-6.jpg的链接
+  `${BASE_URL}/images/4 《煮茶图》 明 丁云鹏.jpeg`,
+  `${BASE_URL}/images/4《斗茶图》 明 唐寅.jpeg`,
   `${BASE_URL}/images/4 《玉川先生煎茶图》 清 沈农.jpeg`,
-  `${BASE_URL}/images/4 《侍茗图》明 唐寅.jpg`,
+  `${BASE_URL}/images/4 《侍茗图》明 唐寅.jpeg`,
   `${BASE_URL}/images/4 《侍茗图》 明 唐寅.jpeg`
 ];
 
